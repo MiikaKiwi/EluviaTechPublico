@@ -1,0 +1,1 @@
+Proyecto de Hackathon Inacap Rancagua 2026 :D
