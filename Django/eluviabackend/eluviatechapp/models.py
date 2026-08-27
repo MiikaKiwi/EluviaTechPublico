@@ -17,3 +17,11 @@ class Tickets(models.Model):
 
     def __str__(self):
         return self.asunto
+
+
+class Usuarios(models.Model):
+    usuario = models.CharField(max_length=120)
+    password = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.usuario
