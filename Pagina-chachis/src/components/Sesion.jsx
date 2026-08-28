@@ -34,20 +34,10 @@ const Sesion = ({ onLoginSuccess }) => {
 
     try {
       // =================================================
-      // 🔧 BACKEND:
-      // Endpoint esperado:
-      //
-      // POST /api/login/
-      //
-      // Body:
-      // {
-      //   "username": "...",
-      //   "password": "..."
-      // }
-      // =================================================
+      // 🔧 Mika: dale
 
       const response = await fetch(
-        `${API_URL}/login/`,
+        `${API_URL}/usuario/`,
         {
           method: 'POST',
 
@@ -72,26 +62,9 @@ const Sesion = ({ onLoginSuccess }) => {
         return;
       }
 
-      // =================================================
-      // 🔧 BACKEND:
-      //
-      // Esperamos que Django responda:
-      //
-      // {
-      //   "token": "abc123...",
-      //   "usuario": {
-      //     "id": 1,
-      //     "username": "admin_demo",
-      //     "rol": "Admin"
-      //   }
-      // }
-      // =================================================
 
-      if (!data.token) {
-        throw new Error(
-          'El servidor no devolvió un token de autenticación.'
-        );
-      }
+      //
+      // Mika: ya puse el la api
 
       if (!data.usuario) {
         throw new Error(
@@ -102,11 +75,6 @@ const Sesion = ({ onLoginSuccess }) => {
       // =================================================
       // GUARDAR SESIÓN
       // =================================================
-
-      localStorage.setItem(
-        'token',
-        data.token
-      );
 
       localStorage.setItem(
         'usuarioTI',
